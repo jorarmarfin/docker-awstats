@@ -1,6 +1,4 @@
-docker build -t jorarmarfin/zabbix:4.2 .
-docker build -t jorarmarfin/zabbix:4.3 .
-#docker build -t drinuxsac/apache-php:tmp -f Dockerfiletmp .
+docker build -t jorarmarfin/awstats:0.1 .
+docker build -t jorarmarfin/awstats:tmp .
 
-docker run --name srv-zabbix -dit jorarmarfin/zabbix:base
-#docker run --name srv-apache -dit drinuxsac/apache-php:tmp
+docker run --name srv-awstats -dit -p 9005:80 jorarmarfin/awstats:0.1
