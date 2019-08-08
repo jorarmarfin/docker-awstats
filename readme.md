@@ -21,3 +21,17 @@ AllowToUpdateStatsFromBrowser=1
 * cp -r /usr/lib/cgi-bin /var/www/html/
 * chown www-data:www-data /var/www/html/cgi-bin/
 * chmod -R 755 /var/www/html/cgi-bin/
+
+# Docker-compose
+~~~~
+version: '3.5'
+services:
+  web:
+    container_name: srv-awstats
+    image: jorarmarfin/awstats:0.1
+    volumes:
+      - ./awstats/config:/etc/awstats/
+      - ./awstats/logs:/var/mylog/
+    ports:
+      - 9005:80
+~~~~
