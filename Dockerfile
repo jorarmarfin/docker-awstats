@@ -30,7 +30,7 @@ ADD init.sh /init.sh
 RUN chmod 755 /*.sh \
 # Add phpinfo script for INFO purposes
 service apache2 restart; \
-chown -R www-data:www-data /var/www ; 
+chown -R www-data:www-data /var/www ;
 
 # Awstats
 ADD config/awstats/awstats.test.com.conf /etc/awstats
@@ -40,7 +40,8 @@ cp -r /usr/lib/cgi-bin /var/www/html/; \
 chown www-data:www-data /var/www/html/cgi-bin/; \
 chown www-data:www-data -Rf /var/mylog/; \
 chmod -R 755 /var/www/html/cgi-bin/; \
-rm /etc/awstats/awstats.conf ; 
+rm /etc/awstats/awstats.conf ; \
+cp /usr/share/doc/awstats/examples/apache.conf /etc/apache2/conf-available/awstats.conf;
 
 WORKDIR /var/www/html
 

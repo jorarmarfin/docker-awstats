@@ -21,7 +21,7 @@ AllowToUpdateStatsFromBrowser=1
 * cp -r /usr/lib/cgi-bin /var/www/html/
 * chown www-data:www-data /var/www/html/cgi-bin/
 * chmod -R 755 /var/www/html/cgi-bin/
-* /cgi-bin/awstats.pl?config=test.com.”
+* /cgi-bin/awstats.pl?config=test.com
 
 # Docker-compose
 ~~~~
