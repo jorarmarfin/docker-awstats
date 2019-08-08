@@ -22,7 +22,13 @@ AllowToUpdateStatsFromBrowser=1
 * chown www-data:www-data /var/www/html/cgi-bin/
 * chmod -R 755 /var/www/html/cgi-bin/
 * /cgi-bin/awstats.pl?config=test.com
-
+# config apache
+* Alias /awstatsclasses "/usr/share/awstats/lib/"
+* Alias /awstats-icon/ "/usr/share/awstats/icon/"
+* Alias /awstatscss "/usr/share/doc/awstats/examples/css"
+* ScriptAlias /statistics/ /usr/lib/cgi-bin/
+* Redirect /awstats /statistics/awstats.pl
+* Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
 # Docker-compose
 ~~~~
 version: '3.5'
